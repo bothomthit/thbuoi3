@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package buoicuoi;
-import java.util.ArrayList;
+package thbuoi5;
 import java.util.Scanner;
 /**
  *
@@ -15,59 +14,36 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    ArrayList<giaoDichNha> arrGiaoDichNha = new ArrayList<>();
-        ArrayList<giaoDichDat> arrGiaoDichDat = new ArrayList<>();
-        int soGiaoDichDat = 0, soGiaoDichNha = 0;
-        long tongTienGiaoDichDat = 0, trungBinhThanhTien = 0;
-        Scanner scanner = new Scanner(System.in);
-         
-        System.out.print("Nhập số giao dịch đất: ");
-        soGiaoDichDat = scanner.nextInt();
-        System.out.print("Nhập số giao dịch nhà: ");
-        soGiaoDichNha = scanner.nextInt();
-         
-        System.out.println("Nhập thông tin giao dịch đất:");
-        for (int i = 0; i < soGiaoDichDat; i++) {
-            System.out.println("Nhập thông tin giao dịch đất thứ " + (i + 1) + ":");
-            giaoDichDat giaoDichDat = new giaoDichDat();
-            giaoDichDat.nhap();
-            arrGiaoDichDat.add(giaoDichDat);
+        // TODO code application logic here
+        danhSach ds = new danhSach();
+        Scanner sc = new Scanner(System.in);
+        int choice = 0;
+        do{
+            System.out.println("\n -------MENU--------");
+            System.out.println("1. them phong hoc");
+            System.out.println("2.xuat danh sach phong hoc");
+            System.out.println("0. Thoat");
+            choice = sc.nextInt();
+            sc.nextLine();
+            switch(choice){
+                case 1:
+                   System.out.println("nhap ma phong hoc");
+        int maPhong = sc.nextInt();
+        System.out.println("nhap vao day nha");
+       String dayNha = sc.nextLine();
+        System.out.println("nhap vao so bong den");
+       int soBongDen = sc.nextInt();
+        System.out.println("nhap dien tich phong");
+       float dienTich = sc.nextFloat();
+                    System.out.println("1.phong ly thuyet");
+                    System.out.println("2.phong may chieu");
+                    System.out.println("3.phong thi nghiem");
+                    System.out.println("4.phong ly may tinh");
+                    int loaiPhong = sc.nextInt();
+                    sc.nextLine();
+             break;
+            }         
         }
-         
-        System.out.println("Nhập thông tin giao dịch nhà:");
-        for (int i = 0; i < soGiaoDichNha; i++) {
-            System.out.println("Nhập thông tin giao dịch nhà thứ " + (i + 1) + ":");
-            giaoDichNha giaoDichNha = new giaoDichNha();
-            giaoDichNha.nhap();
-            arrGiaoDichNha.add(giaoDichNha);
-        }
-         
-        System.out.println("---Thông tin các giao dịch đất---");
-        for (int i = 0; i < arrGiaoDichNha.size(); i++) {
-            System.out.println(arrGiaoDichDat.get(i).toString());
-        }
-         
-        System.out.println("---Thông tin các giao dịch nhà---");
-        for (int i = 0; i < arrGiaoDichNha.size(); i++) {
-            System.out.println(arrGiaoDichNha.get(i).toString());
-        }
-         
-        for (int i = 0; i < arrGiaoDichDat.size(); i++) {
-            if (arrGiaoDichDat.get(i).getLoaiDat().equalsIgnoreCase("A")) {
-                tongTienGiaoDichDat += arrGiaoDichDat.get(i).getDientich() * 
-                    arrGiaoDichDat.get(i).getDonGia() * 1.5;
-            } else if (arrGiaoDichDat.get(i).getLoaiDat().equalsIgnoreCase("B") || 
-                    arrGiaoDichDat.get(i).getLoaiDat().equalsIgnoreCase("C")) {
-                tongTienGiaoDichDat += arrGiaoDichDat.get(i).getDientich() * 
-                    arrGiaoDichDat.get(i).getDonGia();
-            }
-        }
-        trungBinhThanhTien = tongTienGiaoDichDat / (arrGiaoDichDat.size());
-        System.out.println("Trung bình thành tiền của giao dịch đất = " + trungBinhThanhTien);
-         
-        
-            }
-        }
+    }
     
-    
-
+}
