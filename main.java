@@ -57,8 +57,8 @@ public class main {
                         case 1:
                             System.out.print("Co may chieu (true/false): ");
                             boolean coMayChieu = sc.nextBoolean();
-                            PhongLyThuyet phongLyThuyet = new PhongLyThuyet(maPhong, dayNha, dienTich, soBongDen, coMayChieu);
-                            quanLyPhongHoc.themPhong(phongLyThuyet);
+                            phongLyThuyet PhongLyThuyet = new phongLyThuyet(maPhong, dayNha, dienTich, soBongDen, soMayChieu);
+                             danhSach.themPhong(phongLyThuyet);
                             break;
                         case 2:
                             System.out.print("Nhap so may tinh: ");
@@ -72,7 +72,7 @@ public class main {
                            
                             System.out.print("co bon rua (true/false): ");
                             boolean coBonRua = sc.nextBoolean();
-                            phongThiNghiem PhongThiNghiem = new phongThiNghiem(maPhong, dayNha, dienTich, soBongDen, chuyenNganh, sucChua, coBonRua);
+                            phongThiNghiem PhongThiNghiem = new phongThiNghiem(maPhong, dayNha, dienTich, soBongDen, coBonRua);
                              danhSach.themPhong(phongThiNghiem);
                             break;
                         default:
